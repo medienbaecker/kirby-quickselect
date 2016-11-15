@@ -11,6 +11,10 @@
   appearance: none;
   border-radius: 0;
 }
+.select2-search__field {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
 body.ltr .input-with-quickselect .selectbox-wrapper {
   margin-right: auto;
 }
