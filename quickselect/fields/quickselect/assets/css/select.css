@@ -76,7 +76,10 @@ body.ltr .input-with-quickselect .selectbox-wrapper {
   }
   .select2-container--default .select2-selection--single .select2-selection__rendered {
     line-height: 40px;
-    white-space: normal;
+    white-space: nowrap;
+    position: absolute;
+    left: 2px;
+    right: 2px;
   }
   .select2-dropdown {
     border: 2px solid #ddd;

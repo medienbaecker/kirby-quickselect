@@ -1,4 +1,4 @@
-# Kirby Quickselect v1
+# Kirby Quickselect v1.1
 
 This field is based on the core select field and adds a filter and placeholder functionality. It uses the [select2](https://github.com/select2/select2) jQuery plugin.
 
