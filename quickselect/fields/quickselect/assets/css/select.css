@@ -48,6 +48,43 @@ body.ltr .input-with-quickselect .selectbox-wrapper {
     appearance: none;
     border-radius: 0;
   }
+  .select2-container--default .select2-results__option {
+    padding: 0;
+  }
+  .select2-container--default .select2-results__option span {
+    padding: 10px 5px;
+    display: block;
+  }
+  .select2-container--default .select2-results__option span.with-image {
+    padding: 0px;
+  }
+  .select2-container--default .select2-results__option img {
+    vertical-align: middle;
+    width: 40px;
+    margin-right: 5px;
+    display: inline-block;
+    filter: grayscale(100%);
+  }
+  .select2-container--default  .select2-results__option[aria-selected=true] img, .select2-container--default  .select2-results__option--highlighted[aria-selected] img {
+    filter: grayscale(0);
+  }
+  
+  .select2-container--images .select2-selection--single .select2-selection__rendered {
+    padding-left: 0;
+  }
+  .select2-container--images .select2-selection--single .select2-selection__placeholder {
+    padding-left: 8px;
+  }
+  
+  .select2-container--images .select2-selection--single .select2-selection__rendered img {
+    width: 40px;
+    vertical-align: middle;
+    margin-right: 8px;
+    display: block;
+    float: left;
+  }
+  
+  
   .select2-container--default .select2-results__option:empty {
     display: none;
   }
@@ -67,7 +104,7 @@ body.ltr .input-with-quickselect .selectbox-wrapper {
     padding: .5em;
   }
   .select2-container--default .select2-results>.select2-results__options {
-    max-height: 9em;
+    max-height: 160px;
   }
   .select2-container--default .select2-selection--single {
     border: 2px solid #ddd;
@@ -76,12 +113,13 @@ body.ltr .input-with-quickselect .selectbox-wrapper {
   }
   .select2-container--default .select2-selection--single .select2-selection__rendered {
     line-height: 40px;
-    white-space: nowrap;
-    position: absolute;
-    left: 2px;
-    right: 2px;
+    white-space: normal;
+    vertical-align: middle;
+    height: 40px;
   }
   .select2-dropdown {
     border: 2px solid #ddd;
     border-radius: 0;
   }
+  
+  

@@ -21,14 +21,43 @@
       }
 
       var noresults = field.find("select").attr("data-noresults");
-
-      field.find("select").select2({
+      
+      function formatState (opt) {
+        
+        if (!opt.id) {
+          return opt.text;
+        }
+        
+        var optimage = $(opt.element).data('image'); 
+        
+        if(!field.find("select").hasClass("images") || !optimage){
+          var $opt = $(
+            '<span>' + opt.text + '</span>'
+          );
+        }
+        else {                    
+          var $opt = $(
+            '<span class="with-image"><img src="' + optimage + '"/> ' + opt.text + '</span>'
+          );
+        }
+        
+        return $opt;
+        
+      }
+      
+      var $select2 = field.find("select").select2({
         language: {
           noResults: function (params) {
             return noresults;
-          }
-        }
+          },
+        },
+        templateResult: formatState,
+        templateSelection: formatState,
       });
+      
+      if (field.find('select.quickselect').hasClass("images")) {
+        $select2.data('select2').$container.addClass("select2-container--images");
+      }
 
       if (field.find(".select2-results__options li").first().text() == "") {
         field.find(".select2-results__options li").first().hide();
@@ -38,7 +67,7 @@
         field.find("i.x").hide();
       }
 
-      $('select').on('select2:select', function (evt) {
+      field.find('select.quickselect').on('select2:select', function (evt) {
         if (clear == true) {
           field.find("i.x").show();
         }
@@ -48,8 +77,7 @@
         field.find("select").val('').change();
         field.find("i.x").hide();
       });
-
-
+      
     });
 
   };

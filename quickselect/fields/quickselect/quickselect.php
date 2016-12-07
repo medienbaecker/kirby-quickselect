@@ -35,12 +35,44 @@ class QuickselectField extends SelectField {
 		}
 
 		foreach($this->options() as $value => $text) {
-			$select->append($this->option($value, $text, $this->value() == $value));
+		  
+		  if(strpos($value, ".jpg")  !== false OR
+		     strpos($value, ".jpeg") !== false OR
+		     strpos($value, ".gif")  !== false OR
+		     strpos($value, ".png")  !== false) {
+	       if (!strpos(implode(",", $select->attr("class")), "images")  !== false) {
+           $select->addClass("images");
+         }
+         
+         if($image= page()->image($value)) {
+           $image = $image->crop(60, 60)->url();
+           $select->append(
+             $this->option($value, $text, $this->value() == $value)->attr("data-image", $image)
+           );   
+         }
+         else {
+            $select->append(
+              $this->option($value, $text, $this->value() == $value)
+            );
+         }
+ 
+		  }
+		  else {
+        
+        $select->append(
+          $this->option($value, $text, $this->value() == $value)
+        );
+        
+      }
+			
 		}
+		
 		$noresults = $this->i18n([
       'en'    => "Nothing found",
       'de'    => "Nichts gefunden"
     ]);
+    
+
 		$select->attr("data-noresults", $noresults);
 		$select->attr("style", "width: 100%");
 		$inner = new Brick('div');
