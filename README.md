@@ -10,7 +10,7 @@ Simply put the `quickselect` folder into your `site/plugins` folder.
 
 ## Example
 
-![Preview](quickselect.gif)
+![Preview](https://user-images.githubusercontent.com/7975568/27504121-082d8ca4-5885-11e7-8983-9159593cdbb4.gif)
 
 ````
 featured:
