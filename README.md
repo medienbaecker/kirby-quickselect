@@ -1,4 +1,6 @@
-# Kirby Quickselect v1.3 <a href="https://www.paypal.me/medienbaecker"><img width="99" src="http://www.medienbaecker.com/beer.png" alt="Buy me a beer" align="right"></a>
+This plugin for Kirby 2 is no longer maintained.
+
+# Kirby Quickselect v1.3
 
 This field is based on the core select field and adds a filter and placeholder functionality. It uses the [select2](https://github.com/select2/select2) jQuery plugin.
 
